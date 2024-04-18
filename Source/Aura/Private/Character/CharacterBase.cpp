@@ -12,6 +12,14 @@ ACharacterBase::ACharacterBase()
 	Weapon->SetupAttachment(GetMesh(), FName("WeaponSocket"));
 
 }
+UAbilitySystemComponent* ACharacterBase::GetAbilitySystemComponent() const
+{
+	return AbilitySystemComp;
+}
+UAttributeSet* ACharacterBase::GetAttributeSet() const
+{
+	return AttributeSet;
+}
 void ACharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
