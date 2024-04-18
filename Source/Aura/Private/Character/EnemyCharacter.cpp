@@ -12,9 +12,17 @@ AEnemyCharacter::AEnemyCharacter()
 
 	AbilitySystemComp = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComp->SetIsReplicated(true);
+	AbilitySystemComp->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
 
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
 
+}
+
+void AEnemyCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	AbilitySystemComp->InitAbilityActorInfo(this, this);
 }
 
 void AEnemyCharacter::HighlightActor()

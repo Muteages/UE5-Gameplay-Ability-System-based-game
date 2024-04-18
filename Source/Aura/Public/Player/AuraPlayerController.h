@@ -38,7 +38,9 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	TObjectPtr<UInputAction> JumpAction;
 
+	UPROPERTY()
 	TObjectPtr<IEnemyInterface> PrevActor;
+	UPROPERTY()
 	TObjectPtr<IEnemyInterface> CurrActor;
 
 	

@@ -11,6 +11,8 @@
 AAuraPlayerController::AAuraPlayerController()
 {
 	bReplicates = true;
+	PrevActor = nullptr;
+	CurrActor = nullptr;
 }
 
 void AAuraPlayerController::PlayerTick(float DeltaTime)

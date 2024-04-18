@@ -22,11 +22,13 @@ public:
 	AAuraCharacter();
 protected:
 	virtual void BeginPlay() override;
+	virtual void PossessedBy(AController* NewController) override;  // From ACharacter
+	virtual void OnRep_PlayerState() override;  // From APawn
 private:
-	
 	//UPROPERTY(EditAnywhere, Category = "CameraComponent")
 	//TObjectPtr<UCameraComponent> CameraComp;
 
 	//UPROPERTY(EditAnywhere, Category = "CameraComponent")
 	//TObjectPtr<USpringArmComponent> SpringArmComp;
+	void InitPlayerState();
 };

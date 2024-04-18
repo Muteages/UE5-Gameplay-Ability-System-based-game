@@ -11,7 +11,8 @@ AAuraPlayerState::AAuraPlayerState()
 
 	AbilitySystemComp = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComp->SetIsReplicated(true);
-
+	AbilitySystemComp->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
+	AbilitySystemComp->GetAvatarActor
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
 }
 

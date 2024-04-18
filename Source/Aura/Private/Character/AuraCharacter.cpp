@@ -3,6 +3,7 @@
 
 #include "Character/AuraCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Player/AuraPlayerState.h"
 //#include "GameFramework/SpringArmComponent.h"
 //#include "Camera/CameraComponent.h"
 
@@ -31,4 +32,30 @@ AAuraCharacter::AAuraCharacter()
 void AAuraCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+}
+
+void AAuraCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	// Init for the server
+	InitPlayerState();
+}
+
+void AAuraCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	// Init for the client
+	InitPlayerState();
+}
+
+// Init ASC and AS from player state
+void AAuraCharacter::InitPlayerState()
+{
+	AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+	check(AuraPlayerState);
+	AbilitySystemComp = AuraPlayerState->GetAbilitySystemComponent();
+	AttributeSet = AuraPlayerState->GetAttributeSet();
+	AbilitySystemComp->InitAbilityActorInfo(AuraPlayerState, this);
 }
