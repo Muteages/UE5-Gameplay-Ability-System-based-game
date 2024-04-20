@@ -34,19 +34,19 @@ void AAuraCharacter::BeginPlay()
 	Super::BeginPlay();
 }
 
+// Init for the server
 void AAuraCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);
 
-	// Init for the server
 	InitPlayerState();
 }
 
+// Init for the client
 void AAuraCharacter::OnRep_PlayerState()
 {
 	Super::OnRep_PlayerState();
 
-	// Init for the client
 	InitPlayerState();
 }
 
