@@ -15,8 +15,7 @@ AAuraCharacter::AAuraCharacter()
 	//SpringArmComp = CreateDefaultSubobject<USpringArmComponent>("SpringArmComponent");
 	//SpringArmComp->bUsePawnControlRotation = false;
 	//SpringArmComp->SetupAttachment(RootComponent);
-
-
+	// 
 	//CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComponent");
 	//CameraComp->SetupAttachment(SpringArmComp);
 

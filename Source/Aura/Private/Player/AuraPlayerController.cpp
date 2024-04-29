@@ -36,7 +36,7 @@ void AAuraPlayerController::CursorTrace()
 		/** Cases:
 		* 1. prev == nullptr, curr == nullptr.     -- Do nothing
 		* 4. prev == valid,   curr == valid.       Same actor   -- Do nothing
-		* 
+		*
 		* 2. prev == nullptr, curr == valid.       -- Call Highlight() on curr
 		* 3. prev == valid,   curr == nullptr.     -- Call Unhighlight() on prev
 		* 5. prev == valid,   curr == valid.       Different actors  -- Call Unhighlight() on prev, call Highlight() on curr
@@ -96,5 +96,3 @@ void AAuraPlayerController::Move(const FInputActionValue& Value)
 		ControllerPawn->AddMovementInput(RightDirection, InputValue.X);
 	}
 }
-
-
